@@ -4,9 +4,9 @@
 
 void chatterCallback(const openreroc_gyrosensor::gyro_sensor msg)
 {
-    printf("x:%d\n",msg.gx);
-    printf("y:%d\n",msg.gy);
-    printf("z:%d\n",msg.gz);
+    printf("x:%f\n",msg.real_gx);
+    printf("y:%f\n",msg.real_gy);
+    printf("z:%f\n",msg.real_gz);
 }
 
 int main(int argc, char  **argv)

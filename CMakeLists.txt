@@ -93,8 +93,10 @@ catkin_package(
 ## Your package locations should be listed before other locations
 # include_directories(include)
 include_directories(
-  include/${PROJECT_NAME}
+  include/${openreroc_gyrosensor}
   ${catkin_INCLUDE_DIRS}
+  ~/catkin_ws/src/openreroc_gyrosensor/include/openreroc_gyrosensor
+  ~/catkin_ws/devel/include/openreroc_gyrosensor
 )
 
 ## Declare a cpp library

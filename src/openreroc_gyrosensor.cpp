@@ -22,6 +22,12 @@ int main(int argc, char **argv)
   int gyro_x;
   int gyro_y;
   int gyro_z;
+  int gyro_x_signed;
+  int gyro_y_signed;
+  int gyro_z_signed;
+  float real_gx;
+  float real_gy;
+  float real_gz;
 
   fd_32 = open("/dev/xillybus_read_32", O_RDONLY);
 
@@ -41,13 +47,34 @@ int main(int argc, char **argv)
     rc = read(fd_32, &gyro_z, sizeof(gyro_z));
 
     if(cur.gx != gyro_x && cur.gy != gyro_y && cur.gz != gyro_z){
-      msg.gx = gyro_x;
-      msg.gy = gyro_y;
-      msg.gz = gyro_z;
+      //msg.gx = gyro_x;
+      //msg.gy = gyro_y;
+      //msg.gz = gyro_z;
+      gyro_x_signed = (gyro_x > 32768)? (gyro_x-65535) : gyro_x;
+      gyro_y_signed = (gyro_y > 32768)? (gyro_y-65535) : gyro_y;
+      gyro_z_signed = (gyro_z > 32768)? (gyro_z-65535) : gyro_z;    
 
-      printf("x:%d\n",msg.gx);
-      printf("y:%d\n",msg.gy);
-      printf("z:%d\n",msg.gz);
+    /*  if(gyro_y > 32768)
+      {
+        gyro_y_signed = (gyro_y-65535);//~gyro_x + 1;
+      }
+      if(gyro_y > 32768)
+      {
+        gyro_z_signed = (gyro_z-65535);//~gyro_x + 1;
+      }
+      */
+
+
+      msg.real_gx = gyro_x_signed / 131.0;
+      msg.real_gy = gyro_y_signed / 131.0;
+      msg.real_gz = gyro_z_signed / 131.0;
+
+      //printf("x:%d\n",msg.gx);
+      //printf("y:%d\n",msg.gy);
+      //printf("z:%d\n",msg.gz);
+      printf("rawx:%d\n",gyro_x);
+      printf("rawy:%d\n",gyro_y);
+      printf("rawz:%d\n",gyro_z);
 
       pub_openreroc_gyrosensor.publish(msg);
     }

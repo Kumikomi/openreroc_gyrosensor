@@ -1,3 +1,3 @@
-int16 gx
-int16 gy
-int16 gz
+float32 real_gx
+float32 real_gy
+float32 real_gz
