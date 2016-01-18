@@ -45,7 +45,7 @@ Requirements
 
 - [MPU-9250 ９軸センサモジュール(３軸加速度＋３軸ジャイロ＋３軸コンパス) ](https://strawberry-linux.com/catalog/items?code=12250)
 
-<img src="https://strawberry-linux.com/images/mpu-9250.jpg" alt="" height="150" />
+<img src="http://aquila.is.utsunomiya-u.ac.jp/~kazushi/mpu-9250.jpg" alt="" height="150" />
 
 reference : https://strawberry-linux.com/catalog/items?code=12250
 
