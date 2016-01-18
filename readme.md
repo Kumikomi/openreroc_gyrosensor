@@ -77,7 +77,7 @@ Please replace **xillydemo.bit** on the SD card with `openreroc_pwm/hardware/ima
 cd ~/catkin_ws/
 source devel/setup.bash
 roscore &
-rosrun openreroc_gyrosensor sample_output
+rosrun openreroc_gyrosensor sample_output_gyro
 ```
 
 **terminal 2**
