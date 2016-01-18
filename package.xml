@@ -2,7 +2,7 @@
 <package>
   <name>openreroc_gyrosensor</name>
   <version>0.1.0</version>
-  <description>The openreroc_gyrosensor package</description>
+  <description>This package supports a gyro sensor using an FPGA board (ZedBoard Xilinx).</description>
 
   <maintainer email="openreroc@virgo.is.utsunomiya-u.ac.jp">Kazushi Yamashina</maintainer>
   <maintainer email="openreroc@virgo.is.utsunomiya-u.ac.jp">Hitomi Kimura</maintainer>
